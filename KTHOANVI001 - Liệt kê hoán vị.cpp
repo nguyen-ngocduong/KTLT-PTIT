@@ -1,24 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int t;
-    cin >> t; // �?c s? l�?ng test case
-    while (t--) {
-        int n;
-        cin >> n; // �?c gi� tr? n
-
-        vector<int> A(n); // T?o vector l�u tr? t?p h?p A
-        iota(A.begin(), A.end(), 1); // Kh?i t?o A t? 1 �?n n
-
+int main () {
+    int tc; cin>>tc;
+    while(tc--) {
+        int n; cin>>n;
+        vector<int> A(n); // Tạo vecto lưu trữ tập hợp A có n ptu
+        iota(A.begin(), A.end(), 1);//khởi tạo A từ 1 đến n
+        ostringstream oss; // Sử dụng ostringstream để xây dựng kết quả
         do {
-            // In ra ho�n v? hi?n t?i
-            for (int i = 0; i < n; ++i) {
-                cout << A[i];
-                if (i < n - 1) cout << " "; // Th�m d?u c�ch gi?a c�c s?
+            // Thêm hoán vị hiện tại vào chuỗi
+            for(int i = 0; i<n; i++) {
+                oss << A[i];
+                if(i < n-1) oss << " ";// Thêm dấu cách giữa các số
             }
-            cout << endl; // Xu?ng d?ng sau m?i ho�n v?
-        } while (next_permutation(A.begin(), A.end())); // T?o ho�n v? ti?p theo
+            oss<<endl;// Xuống dòng sau mỗi hoán vị
+        }while(next_permutation(A.begin(), A.end()));  // Tạo hoán vị tiếp theo
+        cout << oss.str();  // In ra tất cả hoán vị cùng một lúc
     }
     return 0;
 }
