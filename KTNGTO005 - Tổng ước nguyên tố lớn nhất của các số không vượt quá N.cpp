@@ -32,7 +32,7 @@ int main () {
     max_uoc();
     int tc;cin>>tc;
     while(tc--) {
-        long long n; cin>>n;
+        int n; cin>>n;
         cout<<a[n]<<endl;
     }
     return 0;
