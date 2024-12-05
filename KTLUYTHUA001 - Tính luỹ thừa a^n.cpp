@@ -25,8 +25,28 @@ void solve(int x, int n) {
     int res[MAX];
     int res_size = 0;
     int tmp = x;
-    while(tmp != 0) {
-        res
+    while(tmp > 0) {
+        res[res_size++] = tmp%10;
+        tmp /= 10;
+    }
+    for(int i = 2; i<=n; i++) {
+        res_size = mul(x, res, res_size);
+    }
+    for(int i = res_size - 1; i >= 0; i--) {
+        cout << res[i]%mod;
     }
 } 
-int main () {}
+int main () {
+    int tc; cin>>tc;
+    while(tc--) {
+        int a,n; cin>>a>>n;
+        if(a==0) {
+            cout << "0" << endl;
+        }
+        else {
+            solve(a,n);
+            cout << endl;
+        }
+    }
+    return 0;
+}
