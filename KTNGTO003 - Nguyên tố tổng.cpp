@@ -20,7 +20,7 @@ long long isPrime(long long n){
     bool check = false;
     while(!check) {
         prime++;
-        if(Prime(prime) && Prime(prime)) 
+        if(Prime(prime) && Prime(prime-2)) 
             check = true;
     }
     return prime;
