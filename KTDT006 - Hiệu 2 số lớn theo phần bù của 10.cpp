@@ -27,8 +27,15 @@ string bu10(string v) {
 
 string subtract(string a, string b){
     string res = "";
-    while(a.size() > b.size()) b = '0' + b;
-    while(b.size() > a.size()) a = '0' + a;
+    if (a.length() < b.length()) 
+        swap(a, b);
+
+    int l1 = a.length(), l2 = b.length();
+    int diffLen = l1 - l2;
+
+    for (int i = 0; i < diffLen; i++) {
+        b = "0" + b;
+    }
     string c = tong(a, bu10(b));
     if (c.length() > a.length())
     {
