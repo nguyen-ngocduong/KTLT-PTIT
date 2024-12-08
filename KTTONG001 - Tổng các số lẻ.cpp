@@ -1,12 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
-int main () {
-    int tc; cin>>tc;
-    while(tc--) {
-        int l,r; cin>>l>>r;
-        long n = (r-l)/2;
-        long long sum = ((n+1)*(r+l))/2;
-        cout<<sum<<endl;
-    }
-    return 0;
+long tinh_tong(long l,long r){
+	if(l%2==0){
+		l+=1;
+	}
+	if(r%2==0){
+		r-=1;
+	}
+	return (l+r)*(((r-l)/2)+1)/2;
+}
+int main(){
+	int t; cin >> t;
+	while(t--){
+		long l,r;
+		cin >> l >> r;
+		cout << tinh_tong(l,r)<< endl;
+	}
 }
