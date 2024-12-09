@@ -11,7 +11,7 @@ int main () {
         }
         for(int i = 0; i<len; i++) {
             for(int j = 0; j<i; j++) {// s[j] số trước s[i]
-                if(v[i] > v[j]) {
+                if(s[i] > s[j]) {
                     v[i] = max(v[i], v[j] + 1);
                 }
             }
