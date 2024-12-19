@@ -7,7 +7,7 @@ long long tong_uoc_so(long long n) {
             if(n / i == i) {
                 sum += i;
             }
-            else sum += i + 1/i;
+            else sum += i + n/i;
         }
     }
     return sum;
