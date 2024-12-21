@@ -7,7 +7,7 @@ bool Prime(long long n) {
         return true;
     if(n%2 == 0 || n%3 == 0) 
         return false;
-    for(long long i = 5; i*i <= n; i++) {
+    for(long long i = 5; i*i <= n; i+=6) {
         if(n%i==0|| n%(i+2)== 0) 
             return false;
     }
