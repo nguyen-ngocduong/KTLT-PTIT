@@ -1,23 +1,29 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-int main () {
-    int tc; cin>>tc;
-    while(tc--) {
-        long long n; cin>>n;
-        long long sum = 0;
-        vector<long long> v;
-        for(long long  i = 1; ceil(sum) <= n; i++) {
+
+int main()
+{
+    int test;
+    cin >> test;
+    while (test--)
+    {
+        int n;
+        cin >> n;
+        vector<int> giaithua;
+        double sum = 0;
+        for (int i = 1; ceil(sum) <= n; i++)
+        {
             sum += log10(i);
-            if(ceil(sum) == n) {
-                v.push_back(i);
-            }
+            if (ceil(sum) == n)
+                giaithua.push_back(i);
         }
-        if(v.empty()) cout<<"NO"<<endl;
-        else {
-            cout<<v.size()<<" ";
-            for(int i : v) {
-                cout<<i<<" ";
-            }
+        if (giaithua.empty())
+            cout << "NO" << endl;
+        else
+        {
+            cout << giaithua.size() << " ";
+            for (int x : giaithua)
+                cout << x << " ";
             cout << endl;
         }
     }
